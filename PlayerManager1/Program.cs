@@ -105,8 +105,14 @@ namespace PlayerManager1 // >>> Change to PlayerManager2 for exercise 4 <<< //
             Console.Write("Enter player name: ");
             string playerName = Console.ReadLine();
 
-            Console.Write("Enter player score");
+            Console.Write("Enter player score: ");
             int playerScore = int.Parse(Console.ReadLine());
+
+            Player newPlayer = new Player(playerName, playerScore);
+            playerList.Add(newPlayer);
+            
+
+
             // /////////////////// //
             // COMPLETE ME PLEASE! //
             // /////////////////// //
@@ -126,7 +132,7 @@ namespace PlayerManager1 // >>> Change to PlayerManager2 for exercise 4 <<< //
             Console.WriteLine("Players List:");
             foreach (Player player in playersToList)
             {
-                Console.WriteLine($"Name: {player.GetName()}, Score: {player.GetScore()}");
+                Console.WriteLine($"Name: {player.Name}, Score: {player.Score}");
             }
             // /////////////////// //
             // COMPLETE ME PLEASE! //
@@ -138,7 +144,13 @@ namespace PlayerManager1 // >>> Change to PlayerManager2 for exercise 4 <<< //
         /// </summary>
         private void ListPlayersWithScoreGreaterThan()
         {
-            Console.WriteLine("Listing")
+            Console.WriteLine("Enter a mimimum score");
+            if (!int.TryParse(Console.ReadLine(),out int minScore))
+            {
+                Console.WriteLine("Invalid input. Please enter a valid integer.");
+            }
+
+            ListPlayers(GetPlayersWithScoreGreaterThan(minScore));
             // /////////////////// //
             // COMPLETE ME PLEASE! //
             // /////////////////// //
@@ -153,6 +165,17 @@ namespace PlayerManager1 // >>> Change to PlayerManager2 for exercise 4 <<< //
         /// </returns>
         private IEnumerable<Player> GetPlayersWithScoreGreaterThan(int minScore)
         {
+            List<Player> goodLST = new List<Player>();
+            foreach(Player p in playerList)
+            {
+                if (p.Score > minScore)
+                {
+                    goodLST.Add(p);
+                }
+                
+            }
+            return goodLST;
+            
             // /////////////////// //
             // COMPLETE ME PLEASE! //
             // /////////////////// //
