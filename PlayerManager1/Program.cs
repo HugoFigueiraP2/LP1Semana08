@@ -74,7 +74,7 @@ namespace PlayerManager1 // >>> Change to PlayerManager2 for exercise 4 <<< //
 
                 // Wait for user to press a key...
                 Console.Write("\nPress any key to continue...");
-                Console.ReadKey(true);
+                //Console.ReadKey(true);
                 Console.WriteLine("\n");
 
                 // Loop keeps going until players choses to quit (option 4)
@@ -111,8 +111,6 @@ namespace PlayerManager1 // >>> Change to PlayerManager2 for exercise 4 <<< //
             Player newPlayer = new Player(playerName, playerScore);
             playerList.Add(newPlayer);
             
-
-
             // /////////////////// //
             // COMPLETE ME PLEASE! //
             // /////////////////// //
