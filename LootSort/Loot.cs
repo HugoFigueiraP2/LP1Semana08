@@ -45,24 +45,22 @@ namespace LootSort
                 return 1;
             }
 
-            int typeComparison = Kind.CompareTo(other.Kind);
-            if (typeComparison != 0)
+            int comp_Type = Kind.CompareTo(other.Kind);
+            if (comp_Type != 0)
             {
-               return typeComparison;
+               return comp_Type;
             }
 
-            int valueComparison = Kind.CompareTo(other.Kind);
-            if (valueComparison != 0)
+            int comp_Value = Kind.CompareTo(other.Kind);
+            if (comp_Value != 0)
             {
-                return valueComparison;
+                return comp_Value;
             }
 
             
             return Description.CompareTo(other.Description);
             
-            
-
-            
+        
         }
     }
 }
