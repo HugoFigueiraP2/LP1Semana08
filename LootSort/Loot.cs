@@ -1,3 +1,5 @@
+using System;
+
 namespace LootSort
 {
     /// <summary>
@@ -43,25 +45,22 @@ namespace LootSort
                 return 1;
             }
 
-            if (Kind >= other.Kind)
+            int typeComparison = Kind.CompareTo(other.Kind);
+            if (typeComparison != 0)
             {
-               return Kind.CompareTo(other.Loot);
+               return typeComparison;
             }
 
-            if (Value >= other.Value)
+            int valueComparison = Kind.CompareTo(other.Kind);
+            if (valueComparison != 0)
             {
-                return Value.CompareTo(other.Loot);
+                return valueComparison;
             }
 
-            if (Description >= other.Description)
-            {
-                return Description.CompareTo(other.Description);
-            }
-
-            else
-            {
-                return 0;
-            }
+            
+            return Description.CompareTo(other.Description);
+            
+            
 
             
         }
