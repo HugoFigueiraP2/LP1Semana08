@@ -35,5 +35,35 @@ namespace LootSort
         /// </returns>
         public override string ToString() =>
             $"[{Kind,15}]\t{Value:f2}\t{Description}";
+
+        public int CompareTo(Loot other)
+        {
+            if (other == null)
+            {
+                return 1;
+            }
+
+            if (Kind >= other.Kind)
+            {
+               return Kind.CompareTo(other.Loot);
+            }
+
+            if (Value >= other.Value)
+            {
+                return Value.CompareTo(other.Loot);
+            }
+
+            if (Description >= other.Description)
+            {
+                return Description.CompareTo(other.Description);
+            }
+
+            else
+            {
+                return 0;
+            }
+
+            
+        }
     }
 }
