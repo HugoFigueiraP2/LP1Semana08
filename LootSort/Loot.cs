@@ -3,7 +3,7 @@ namespace LootSort
     /// <summary>
     /// The Loot class should implement IComparable<Loot>
     /// </summary>
-    public class Loot
+    public class Loot : IComparable<Loot>
     {
         /// <summary>Type of loot.</summary>
         public LootType Kind { get; }
